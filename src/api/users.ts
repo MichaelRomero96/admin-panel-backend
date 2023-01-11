@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { AxiosError } from 'axios';
-import axiosClient from '../../api/axiosClient';
+import axiosClient from './axiosClient';
 import { UsersResponse } from '../types/users';
 
 const listUsers = async (): Promise<UsersResponse> => {

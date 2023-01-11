@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import { AxiosError } from 'axios';
 import { Request, Response } from 'express';
-import axiosClient from '../../api/axiosClient';
+import axiosClient from '../api/axiosClient';
 import { LoadStates } from '../types';
 import { UsersResponse } from '../types/users';
 import { v4 as uuid } from 'uuid';
