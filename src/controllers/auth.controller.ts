@@ -15,9 +15,19 @@ const login = async (req: Request, res: Response): Promise<void> => {
     const userData = filteredUser[0];
     if (userData.password !== password) throw new Error('Wrong password');
 
+    const { name, lastName, role } = userData;
+
     res.status(200).json({
       status: LoadStates.SUCCESS,
-      msg: 'successfully logged',
+      msg: 'Successfully logged',
+      userData: { name, lastName, email, role },
+      users: users.map((user) => ({
+        id: user.id,
+        name: user.name,
+        lastName: user.lastName,
+        email: user.email,
+        role: user.role,
+      })),
     });
   } catch (error) {
     const { message } = error as AxiosError;
